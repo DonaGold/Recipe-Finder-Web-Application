@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recipe Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">🍳 Recipe Finder</h1>
+      <div class="actions">
+        <button id="randomBtn" class="btn">Surprise me</button>
+        <button id="favoritesToggle" class="btn">Favorites <span id="favCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="search-section">
+      <form id="searchForm" class="search-form" autocomplete="off">
+        <input id="searchInput" type="search" placeholder="Search recipes by name or ingredient..." />
+        <button type="submit" class="btn">Search</button>
+      </form>
+      <p id="statusMessage" class="status-message" aria-live="polite"></p>
+    </section>
+
+    <section id="resultsSection" class="results-section">
+      <div id="resultsGrid" class="results-grid"></div>
+    </section>
+
+    <section id="favoritesSection" class="favorites-section hidden">
+      <h2>Your Favorites</h2>
+      <div id="favoritesGrid" class="results-grid"></div>
+      <p id="noFavs" class="status-message">No favorites yet — add some from results!</p>
+    </section>
+  </main>
+
+  <!-- Modal for recipe details -->
+  <div id="detailsModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn" aria-label="Close details">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built with ❤️ — Data from <a href="https://www.themealdb.com" target="_blank" rel="noopener">TheMealDB</a>.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
